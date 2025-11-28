@@ -1,0 +1,16 @@
+---
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=10
+      - PGID=1000
+      - TZ=America/Chicago
+    volumes:
+      - /volume2/docker/prowlarr/data:/config
+    ports:
+      - 9696:9696
+    extra_hosts:
+      - ultron.local:192.168.4.125
+    restart: unless-stopped
