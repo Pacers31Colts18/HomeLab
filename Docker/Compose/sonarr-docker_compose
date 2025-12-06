@@ -1,0 +1,17 @@
+---
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=10
+      - TZ=America/Chicago
+    volumes:
+      - /volume2/docker/sonarr/data:/config
+      - /volume1/data:/data
+    ports:
+      - 8989:8989
+    extra_hosts:
+      - ultron.local:192.168.4.125
+    restart: unless-stopped

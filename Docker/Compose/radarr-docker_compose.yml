@@ -1,0 +1,17 @@
+---
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=10
+      - TZ=America/Chicago
+    volumes:
+      - /volume2/docker/radarr/data:/config
+      - /volume1/data
+    ports:
+      - 7878:7878
+    extra_hosts:
+      - ultron.local:192.168.4.125
+    restart: unless-stopped

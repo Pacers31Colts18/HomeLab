@@ -1,0 +1,17 @@
+---
+services:
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=10
+      - TZ=America/Chicago
+    volumes:
+      - /volume2/docker/bazarr/data:/config
+      - /volume1/data
+    ports:
+      - 6767:6767
+    extra_hosts:
+      - ultron.local:192.168.4.125
+    restart: unless-stopped

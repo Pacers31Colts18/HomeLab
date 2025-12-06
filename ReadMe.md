@@ -1,0 +1,76 @@
+# Home Lab Configuraiton
+
+## Hardware:
+- UGreen 4 Bay NAS Enclosure
+    - http://ultron.local:9999
+    - Docker
+        - Hard Drives
+        - 2 x 8TB Seagate IronWolf
+- Intel NUC
+    - Proxmox VE
+- Dell Optiplex 7020
+  - Windows 11
+  - Hyper-V
+    - Active Directory
+    - Hybrid configuration to Entra ID tenant
+    - SCCM Lab
+      - Co-Management w/ Microsoft Intune.
+
+## Software
+- Tailscale
+- Proxmox VE
+    - Home Assistant
+        - Proxmox VM
+    - Joplin
+      - Proxmox LXC
+      - http://192.168.4.205:22300
+    - FreshRSS
+      - Proxmox LXC
+    - Karakeep
+      - Proxmox LXC
+    - Technitium
+        - DNS Server/Ad Blocker
+        - Proxmox LXC
+        - 192.168.4.208:5380
+- Docker
+    - Portainer
+        http://ultron.local:9000
+    - Plex
+      - Docker - Container
+      - http://ultron.local:32400
+    - NZBGet
+        - Portainer - Stack
+        - http://ultron.local:6789
+        - News Servers:
+            - news.eweka.nl
+            - news.newsdemon.com
+    - Prowlarr
+        - Portainer - Stack
+        - http://ultron.local:9696
+        - Indexers
+            - https://nzb.su
+              - Yearly
+            - https://nzbfinder.ws
+              - Yearly
+            - https://nzbgeek.info
+              - Lifetime
+    - Lidarr
+        - Portainer - Stack
+        - http://ultron.local:8686
+    - Sonarr
+        - Portainer - Stack
+        - http://ultron.local:8989
+    - Radarr
+        - Portainer - Stack
+        - http://ultron.local:7878
+    - Bazarr
+        - Portainer - Stack
+        - http://ultron.local:6767
+        - Providers:
+          - OpenSubtitles.org
+    - Immich
+      - Docker
+      - http://ultron.local:2283
+    - Posteria
+      - Docker
+      - http://ultron.local:1818
