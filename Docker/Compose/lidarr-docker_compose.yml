@@ -1,0 +1,20 @@
+---
+services:
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=10
+      - TZ=America/Chicago
+    volumes:
+      - /volume2/docker/lidarr/data:/config
+      - /volume1/data:/data
+
+      - /volume1/data/media/music:/music #optional
+      - /volume1/data/usenet/complete/music:/downloads #optional
+    ports:
+      - 8686:8686
+    extra_hosts:
+      - ultron.local:192.168.4.125
+    restart: unless-stopped

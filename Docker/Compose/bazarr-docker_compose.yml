@@ -2,7 +2,7 @@
 services:
   bazarr:
     image: lscr.io/linuxserver/bazarr:latest
-    container_name: bazarr
+    container_name: bazarr01
     environment:
       - PUID=1000
       - PGID=10

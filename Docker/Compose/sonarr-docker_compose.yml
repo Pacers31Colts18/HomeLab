@@ -10,6 +10,8 @@ services:
     volumes:
       - /volume2/docker/sonarr/data:/config
       - /volume1/data:/data
+      - /volume1/data/media/tv:/tv
+      - /volume1/data/usenet/complete:/downloads
     ports:
       - 8989:8989
     extra_hosts:

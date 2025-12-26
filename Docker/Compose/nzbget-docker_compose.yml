@@ -1,0 +1,18 @@
+services:
+  nzbget:
+    image: ghcr.io/linuxserver/nzbget:latest
+    container_name: NZBGet
+    environment:
+       PUID: 1000
+       PGID: 10
+       TZ: America/Chicago
+       NZBGET_USER: #USERNAME
+       NZBGET_PASS: #PASSWORD
+    volumes:
+      - /volume2/docker/nzbget/config:/config
+      - /volume1/data:/data
+    ports:
+      - 6789:6789
+    extra_hosts:
+      - ultron.local:192.168.4.125
+    restart: on-failure:5

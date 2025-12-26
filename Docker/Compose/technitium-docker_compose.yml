@@ -1,0 +1,19 @@
+services:
+  technitium:
+    image: technitium/dns-server:latest
+    container_name: Technitium
+    healthcheck:
+      test: timeout 10s bash -c ':> /dev/tcp/127.0.0.1/5380' || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s  
+    hostname: dns02
+    network_mode: host
+    environment:
+       DNS_SERVER_DOMAIN: joeloveless.net
+       DNS_SERVER_LOG_USING_LOCAL_TIME: true
+       TZ: America/Chicago
+    volumes:
+      - /volume2/docker/technitium:/etc/dns:rw
+    restart: on-failure:5
